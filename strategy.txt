@@ -1,0 +1,27 @@
+STRATEGY SPECIFICATION
+
+Market:
+BTC Up or Down 5m
+
+Entry:
+- Time remaining <= 180 seconds
+- Time remaining > 0
+- Executable best ask > 0.75
+- Capital per trade = $5
+
+Position:
+- Buy the selected outcome
+- Hold until expiry
+
+Emergency exit:
+- If executable best bid < 0.49
+- Submit immediate FAK market sell for the tracked shares
+
+Expiry:
+- Do not manually sell
+- Allow the market to resolve
+
+Risk:
+- Fixed $5 entry allocation
+- No compounding
+- One position per 5-minute market
